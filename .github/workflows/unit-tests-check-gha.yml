@@ -1,4 +1,4 @@
-name: CI
+name: Unit Tests Checker
 
 # on:
 #   pull_request:
@@ -42,11 +42,11 @@ jobs:
         restore-keys: ${{ runner.os }}-pip-
 
 
-    - name: Install Python Dependencies
-      if: steps.cache-dependencies.output.cache-hit != 'true'
-      run: |
-        pip install setuptools wheel
-        pip install -r requirements/edx/testing.txt
+    # - name: Install Python Dependencies
+    #   if: steps.cache-dependencies.output.cache-hit != 'true'
+    #   run: |
+    #     pip install setuptools wheel
+    #     pip install -r requirements/edx/testing.txt
     - name: Install Django
       run: pip install -r requirements/edx/django.txt
 
